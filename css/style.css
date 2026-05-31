@@ -1,0 +1,402 @@
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #222;
+    line-height: 1.7;
+    background:
+        linear-gradient(135deg, rgba(232, 240, 254, 0.9), rgba(255, 248, 240, 0.9)),
+        url("../img/bg-pattern.png");
+    background-color: #f7f8fb;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* 追加の飾り① 左の緑 */
+main::before {
+    content: "";
+    position: fixed;
+    top: 240px;
+    left: 15%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 60% 40% 55% / 45% 50% 60% 40%;
+    background: #bbf7d0;
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+/* 追加の飾り② 右のピンク */
+main::after {
+    content: "";
+    position: fixed;
+    top: 380px;
+    right: 12%;
+    width: 90px;
+    height: 90px;
+    border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%;
+    background: #fecdd3;
+    opacity: 0.3;
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+
+/* 背景の飾り：疑似要素 + position + blend-mode */
+body::before {
+    content: "";
+    position: fixed;
+    top: 80px;
+    right: 8%;
+    width: 300px;
+    height: 300px;
+    border-radius: 20% 10% 55% 45% / 50% 65% 35% 50%;
+    background: #c7d2fe;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 80px;
+    left: 6%;
+    width: 300px;
+    height: 300px;
+    border-radius: 45% 55% 40% 20% / 70% 20% 60% 10%;
+    background: #fed7aa;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    z-index: -1;
+}
+
+/* ----------ヘッダー---------- */
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.site_name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #222;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #4a6cf7;
+}
+
+/* 各セクションの共通余白 */
+section {
+    padding: 64px 40px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ----------ヒーローセクション---------- */
+#hero {
+    min-height: 360px;
+    margin-top: 36px;
+    margin-bottom: 24px;
+    padding: 64px 40px;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    /* FlexBoxで上下左右中央配置 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* 重なる飾りを作るため */
+    position: relative;
+    overflow: hidden;
+}
+
+/* ヒーロー内の重なる要素 */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: -45px;
+    right: -45px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: #e8f0fe;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    bottom: 28px;
+    left: 36px;
+    width: 70px;
+    height: 8px;
+    border-radius: 99px;
+    background-color: #dbeafe;
+}
+
+.avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background-color: #e8f0fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4a6cf7;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero_name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero_catch {
+    font-size: 15px;
+    color: #666;
+    position: relative;
+    z-index: 1;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ----------見出し---------- */
+.section_title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* 見出しの下線：疑似要素 */
+.section_title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 32px;
+    height: 3px;
+    border-radius: 99px;
+    background-color: #4a6cf7;
+}
+
+/* ----------基本情報セクション---------- */
+.info_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.info_item {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 16px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info_item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #dbeafe;
+}
+
+.info_label {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.info_value {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ----------趣味セクション----------*/
+.tag_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0e0e0;
+    border-radius: 99px;
+    padding: 6px 16px;
+    font-size: 13px;
+    color: #444;
+}
+
+/* ----------好きなものランキングセクション---------- */
+.ranking_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ranking_item {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.rank_badge {
+    font-size: 22px;
+    width: 36px;
+    text-align: center;
+}
+
+.rank_title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.rank_reason {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+}
+
+/* ----------フッター---------- */
+footer {
+    text-align: center;
+    padding: 32px 40px;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ----------レスポンシブ対応---------- */
+@media (max-width: 600px) {
+    header {
+        padding: 0 16px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 40px 16px;
+    }
+
+    #hero {
+        min-height: 300px;
+        margin-top: 20px;
+        padding: 48px 20px;
+    }
+
+    .hero_name {
+        font-size: 24px;
+    }
+
+    .info_list {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: 24px 16px;
+    }
+
+     /* ハンバーガーボタンを表示 */
+    .menu_btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* 3本線 */
+    .menu_btn span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: #222;
+        border-radius: 2px;
+    }
+
+    /* ナビゲーションを隠す */
+    nav {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 16px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    /* openクラスがついたら表示 */
+    nav.open {
+        display: flex;
+    }
+}

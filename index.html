@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="日高陸の自己紹介サイト">
+    <title>Profile ver3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Googleフォントの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- JavaScript読み込み -->
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <!-- サイト名 -->
+        <a href="#" class="site_name">About Me</a>
+        <!-- ハンバーガーボタン -->
+        <button class="menu_btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- ナビゲーション -->
+        <nav id="nav">
+            <a href="#about">基本情報</a>
+            <a href="#hobby">趣味</a>
+            <a href="#ranking">ランキング</a>
+        </nav>
+    </header>
+
+    <!-- メイン -->
+    <main>
+        <!-- ヒーローセクション -->
+        <section id="hero">
+            <div class="avatar">日陸</div>
+            <h1 class="hero_name">日高　陸</h1>
+            <p class="hero_catch">これは日高陸の自己紹介サイトです。</p>
+        </section>
+
+        <hr class="divider">
+
+        <!-- 基本情報セクション -->
+        <section id="about">
+            <p class="section_title">About</p>
+
+            <div class="info_list">
+
+                <div class="info_item">
+                    <p class="info_label">名前</p>
+                    <p class="info_value">日高　陸</p>
+                </div>
+                <div class="info_item">
+                    <p class="info_label">出身地</p>
+                    <p class="info_value">宮崎市</p>
+                </div>
+                <div class="info_item">
+                    <p class="info_label">学校</p>
+                    <p class="info_value">宮崎情報ビジネス専門学校 3年生</p>
+                </div>
+                <div class="info_item">
+                    <p class="info_label">好きな食べ物</p>
+                    <p class="info_value">ラーメン</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- 趣味、好きなことセクション -->
+        <section id="hobby">
+            <p class="section_title">Hobby</p>
+
+            <div class="tag_list">
+                <span class="tag">🎮 ゲーム</span>
+                <span class="tag">🏐 バレーボール</span>
+                <span class="tag">🎥 映画鑑賞</span>
+                <span class="tag">🛏  寝ること</span>
+                <span class="tag">📺 アニメ</span>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- 好きなものランキングセクション -->
+        <section id="ranking">
+            <p class="section_title">My Ranking</p>
+            <ol class="ranking_list">
+                <li class="ranking_item">
+                    <span class="rank_badge">🥇</span>
+                    <div>
+                        <p class="rank_title">ラーメン(家系)</p>
+                        <p class="rank_reason">ラーメンは家系がNO.1</p>
+                    </div>
+                </li>
+                <li class="ranking_item">
+                    <span class="rank_badge">🥈</span>
+                    <div>
+                        <p class="rank_title">ゲーム</p>
+                        <p class="rank_reason">嫌なことがあっても忘れられる！</p>
+                    </div>
+                </li>
+                <li class="ranking_item">
+                    <span class="rank_badge">🥉</span>
+                    <div>
+                        <p class="rank_title">寝ること</p>
+                        <p class="rank_reason">何時間寝ても寝足りない</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+    </main>
+    <!-- フッター -->
+    <footer>
+        <p>© 2026　日高　陸</p>
+    </footer>
+</body>
+</html>
